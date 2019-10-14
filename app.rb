@@ -20,10 +20,16 @@ require_relative 'lib/calendar_displayer'
 #james = User.new("jacques","jacques@limace.fr",30)
 
 #Using the class event_creator in order to create an event
-datas = EventCreator.new.get_information
-standup_quotidien = Event.new(datas[:start_date], datas[:duration], datas[:title], datas[:attendees])
+#datas = EventCreator.new.get_information
+#standup_quotidien = Event.new(datas[:start_date], datas[:duration], datas[:title], datas[:attendees])
 
-#standup_quotidien = Event.new("2019-10-14 13:45", 10, "standup quotidien", ["truc@machin.com", "bidule@chose.fr"])
-#test = Event.new("2019-10-14 13:59", 10, "standup quotidien", ["truc@machin.com", "bidule@chose.fr"])
+standup_quotidien = Event.new("2019-10-14 13:45", 10, "standup quotidien", ["truc@machin.com", "bidule@chose.fr"])
+marche_quotidienne = Event.new("2019-10-15 13:45", 10, "standup quotidien", ["bidule@chose.fr"])
+autre = Event.new("2019-10-21 13:45", 10, "standup quotidien", ["bidule@chose.fr"])
+test = Event.new("2019-10-14 13:59", 10, "standup quotidien", ["truc@machin.com", "bidule@chose.fr"])
 
-binding.pry
+#calendar = CalendarDisplayer.new(Event.all)
+
+#calendar.print_calendar
+
+#binding.pry
