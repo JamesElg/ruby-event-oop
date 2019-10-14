@@ -6,7 +6,24 @@ Bundler.require
 # comme ça, tu peux faire User.new dans ce fichier d'application. Top.
 require_relative 'lib/user'
 require_relative 'lib/event'
+require_relative 'lib/event_creator'
+require_relative 'lib/calendar_displayer'
 
 
 # Maintenant c'est open bar pour tester ton application. Tous les fichiers importants sont chargés
 # Tu peux faire User.new, Event.new, binding.pry, User.all, etc.
+
+#julie = User.new("julie","julie@dupont.fr",32)
+#jean = User.new("jean","jean@fabre.fr",31)
+#colin = User.new("colin","colin@limace.fr",30)
+#jacques = User.new("jacques","jacques@limace.fr",30)
+#james = User.new("jacques","jacques@limace.fr",30)
+
+#Using the class event_creator in order to create an event
+datas = EventCreator.new.get_information
+standup_quotidien = Event.new(datas[:start_date], datas[:duration], datas[:title], datas[:attendees])
+
+#standup_quotidien = Event.new("2019-10-14 13:45", 10, "standup quotidien", ["truc@machin.com", "bidule@chose.fr"])
+#test = Event.new("2019-10-14 13:59", 10, "standup quotidien", ["truc@machin.com", "bidule@chose.fr"])
+
+binding.pry
